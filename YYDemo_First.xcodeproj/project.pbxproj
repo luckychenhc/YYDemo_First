@@ -19,10 +19,10 @@
 		487BBDDD1E76509B00D3A3AC /* NSNotificationCenter+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBD931E76509B00D3A3AC /* NSNotificationCenter+YYAdd.m */; };
 		487BBDDE1E76509B00D3A3AC /* NSNumber+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBD951E76509B00D3A3AC /* NSNumber+YYAdd.m */; };
 		487BBDDF1E76509B00D3A3AC /* NSObject+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBD971E76509B00D3A3AC /* NSObject+YYAdd.m */; };
-		487BBDE01E76509B00D3A3AC /* NSObject+YYAddForARC.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBD991E76509B00D3A3AC /* NSObject+YYAddForARC.m */; };
+		487BBDE01E76509B00D3A3AC /* NSObject+YYAddForARC.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBD991E76509B00D3A3AC /* NSObject+YYAddForARC.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		487BBDE11E76509B00D3A3AC /* NSObject+YYAddForKVO.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBD9B1E76509B00D3A3AC /* NSObject+YYAddForKVO.m */; };
 		487BBDE21E76509B00D3A3AC /* NSString+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBD9D1E76509B00D3A3AC /* NSString+YYAdd.m */; };
-		487BBDE31E76509B00D3A3AC /* NSThread+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBD9F1E76509B00D3A3AC /* NSThread+YYAdd.m */; };
+		487BBDE31E76509B00D3A3AC /* NSThread+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBD9F1E76509B00D3A3AC /* NSThread+YYAdd.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		487BBDE41E76509B00D3A3AC /* NSTimer+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBDA11E76509B00D3A3AC /* NSTimer+YYAdd.m */; };
 		487BBDE51E76509B00D3A3AC /* CALayer+YYAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBDA41E76509B00D3A3AC /* CALayer+YYAdd.m */; };
 		487BBDE61E76509B00D3A3AC /* YYCGUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBDA61E76509B00D3A3AC /* YYCGUtilities.m */; };
@@ -45,6 +45,18 @@
 		487BBDF71E76509B00D3A3AC /* YYModelExample.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBDD21E76509B00D3A3AC /* YYModelExample.m */; };
 		487BBDF81E76509B00D3A3AC /* YYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBDD41E76509B00D3A3AC /* YYAppDelegate.m */; };
 		487BBDF91E76509B00D3A3AC /* YYRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 487BBDD61E76509B00D3A3AC /* YYRootViewController.m */; };
+		487BBDFC1E7670D100D3A3AC /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBDFB1E7670D100D3A3AC /* CoreFoundation.framework */; };
+		487BBDFE1E7670D800D3A3AC /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBDFD1E7670D800D3A3AC /* CoreText.framework */; };
+		487BBE001E7670E000D3A3AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBDFF1E7670E000D3A3AC /* CoreGraphics.framework */; };
+		487BBE021E7670E800D3A3AC /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBE011E7670E800D3A3AC /* CoreImage.framework */; };
+		487BBE041E7670EF00D3A3AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBE031E7670EF00D3A3AC /* QuartzCore.framework */; };
+		487BBE061E7670F600D3A3AC /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBE051E7670F600D3A3AC /* ImageIO.framework */; };
+		487BBE081E76710000D3A3AC /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBE071E76710000D3A3AC /* AssetsLibrary.framework */; };
+		487BBE0A1E76710600D3A3AC /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBE091E76710600D3A3AC /* Accelerate.framework */; };
+		487BBE0C1E76710F00D3A3AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBE0B1E76710F00D3A3AC /* MobileCoreServices.framework */; };
+		487BBE0E1E76711600D3A3AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBE0D1E76711600D3A3AC /* SystemConfiguration.framework */; };
+		487BBE101E76711C00D3A3AC /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBE0F1E76711C00D3A3AC /* libsqlite3.tbd */; };
+		487BBE121E76712200D3A3AC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 487BBE111E76712200D3A3AC /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -125,6 +137,18 @@
 		487BBDD41E76509B00D3A3AC /* YYAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYAppDelegate.m; sourceTree = "<group>"; };
 		487BBDD51E76509B00D3A3AC /* YYRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYRootViewController.h; sourceTree = "<group>"; };
 		487BBDD61E76509B00D3A3AC /* YYRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYRootViewController.m; sourceTree = "<group>"; };
+		487BBDFB1E7670D100D3A3AC /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		487BBDFD1E7670D800D3A3AC /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		487BBDFF1E7670E000D3A3AC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		487BBE011E7670E800D3A3AC /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		487BBE031E7670EF00D3A3AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		487BBE051E7670F600D3A3AC /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		487BBE071E76710000D3A3AC /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		487BBE091E76710600D3A3AC /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		487BBE0B1E76710F00D3A3AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		487BBE0D1E76711600D3A3AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		487BBE0F1E76711C00D3A3AC /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		487BBE111E76712200D3A3AC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +156,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				487BBE121E76712200D3A3AC /* libz.tbd in Frameworks */,
+				487BBE101E76711C00D3A3AC /* libsqlite3.tbd in Frameworks */,
+				487BBE0E1E76711600D3A3AC /* SystemConfiguration.framework in Frameworks */,
+				487BBE0C1E76710F00D3A3AC /* MobileCoreServices.framework in Frameworks */,
+				487BBE0A1E76710600D3A3AC /* Accelerate.framework in Frameworks */,
+				487BBE081E76710000D3A3AC /* AssetsLibrary.framework in Frameworks */,
+				487BBE061E7670F600D3A3AC /* ImageIO.framework in Frameworks */,
+				487BBE041E7670EF00D3A3AC /* QuartzCore.framework in Frameworks */,
+				487BBE021E7670E800D3A3AC /* CoreImage.framework in Frameworks */,
+				487BBE001E7670E000D3A3AC /* CoreGraphics.framework in Frameworks */,
+				487BBDFE1E7670D800D3A3AC /* CoreText.framework in Frameworks */,
+				487BBDFC1E7670D100D3A3AC /* CoreFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +179,7 @@
 			children = (
 				487BBD6B1E76506900D3A3AC /* YYDemo_First */,
 				487BBD6A1E76506900D3A3AC /* Products */,
+				487BBDFA1E7670D100D3A3AC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -339,6 +376,25 @@
 				487BBDD21E76509B00D3A3AC /* YYModelExample.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		487BBDFA1E7670D100D3A3AC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				487BBE111E76712200D3A3AC /* libz.tbd */,
+				487BBE0F1E76711C00D3A3AC /* libsqlite3.tbd */,
+				487BBE0D1E76711600D3A3AC /* SystemConfiguration.framework */,
+				487BBE0B1E76710F00D3A3AC /* MobileCoreServices.framework */,
+				487BBE091E76710600D3A3AC /* Accelerate.framework */,
+				487BBE071E76710000D3A3AC /* AssetsLibrary.framework */,
+				487BBE051E7670F600D3A3AC /* ImageIO.framework */,
+				487BBE031E7670EF00D3A3AC /* QuartzCore.framework */,
+				487BBE011E7670E800D3A3AC /* CoreImage.framework */,
+				487BBDFF1E7670E000D3A3AC /* CoreGraphics.framework */,
+				487BBDFD1E7670D800D3A3AC /* CoreText.framework */,
+				487BBDFB1E7670D100D3A3AC /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -560,6 +616,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = 29ZNNLYQCL;
 				INFOPLIST_FILE = YYDemo_First/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lucky.YYDemo-First";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -573,6 +630,7 @@
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = 29ZNNLYQCL;
 				INFOPLIST_FILE = YYDemo_First/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lucky.YYDemo-First";
 				PRODUCT_NAME = "$(TARGET_NAME)";

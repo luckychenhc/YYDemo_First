@@ -305,7 +305,63 @@ YYEncodingType YYEncodingGetType(const char *typeEncoding) {
     _ivarInfos = nil;
     _methodInfos = nil;
     _propertyInfos = nil;
-#error 这里要接着写
+    
+    // methods 方法
+    unsigned int methodCount = 0;
+    Method* methods = class_copyMethodList(self.class, &methodCount);
+    if (methods) {
+        NSMutableDictionary* methodInfos = [NSMutableDictionary dictionaryWithCapacity:0];
+        _methodInfos = methodInfos;
+        for (Method* p = methods; p < methods + methodCount; p++) {
+            YYClassMethodInfo* methodInfo = [[YYClassMethodInfo alloc] initWithMethod:*p];
+            if (methodInfo.name) {
+                methodInfos[methodInfo.name] = methodInfo;
+            }
+        }
+        free(methods);
+    }
+    
+    // property 属性
+    unsigned int propertyCount = 0;
+    objc_property_t* properties = class_copyPropertyList(self.class, &propertyCount);
+    if (properties) {
+        NSMutableDictionary* propertiesInfos = [NSMutableDictionary dictionaryWithCapacity:0];
+        _propertyInfos = propertiesInfos;
+        for (objc_property_t* p = properties; p < properties + propertyCount; p++) {
+            YYClassPropertyInfo* propertyInfo = [[YYClassPropertyInfo alloc] initWithProperty:*p];
+            if (propertyInfo.name) {
+                propertiesInfos[propertyInfo.name] = propertyInfo;
+            }
+        }
+        free(properties);
+    }
+    
+    // ivars 变量
+    unsigned int ivarsCount = 0;
+    Ivar* ivars = class_copyIvarList(self.class, &ivarsCount);
+    if (ivars) {
+        NSMutableDictionary* ivarInfos = [NSMutableDictionary dictionaryWithCapacity:0];
+        _ivarInfos = ivarInfos;
+        for (Ivar* p = ivars; p < ivars + ivarsCount; p++) {
+            YYClassIvarInfo* ivarInfo = [[YYClassIvarInfo alloc] initWithIvar:*p];
+            if (ivarInfo.name) {
+                ivarInfos[ivarInfo.name] = ivarInfo;
+            }
+        }
+        free(ivars);
+    }
+    
+    if (!_ivarInfos) {
+        _ivarInfos = @{};
+    }
+    if (!_methodInfos) {
+        _methodInfos = @{};
+    }
+    if (_propertyInfos) {
+        _propertyInfos = @{};
+    }
+    
+    _needupdate = NO;
     
 }
 
