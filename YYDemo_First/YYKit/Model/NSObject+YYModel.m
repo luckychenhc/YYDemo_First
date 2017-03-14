@@ -430,12 +430,17 @@ static force_inline id YYValueForMultiKeys(__unsafe_unretained NSDictionary *dic
             case YYEncodingTypeUInt16:
             case YYEncodingTypeInt32:
             case YYEncodingTypeUInt32:
-                case YYEncodingTypeInt64:
-                case YYEncodingTypeUInt64:
-                case YYEncodingTypeFloat:
-                case YYEncodingTypeDouble:
-                case YYEncodingTypeObject:
-                case YYEncodingTypeClass:
+            case YYEncodingTypeInt64:
+            case YYEncodingTypeUInt64:
+            case YYEncodingTypeFloat:
+            case YYEncodingTypeDouble:
+            case YYEncodingTypeObject:
+            case YYEncodingTypeClass:
+            case YYEncodingTypeBlock:
+            case YYEncodingTypeStruct:
+            case YYEncodingTypeUnion: {
+                meta->_isKVCCompatible = YES;
+            } break;
             default:
                 break;
         }
@@ -445,10 +450,27 @@ static force_inline id YYValueForMultiKeys(__unsafe_unretained NSDictionary *dic
     return meta;
 }
 
+@end
+
+
+
+/// A class info in object model.
+@interface _YYModelMeta : NSObject {
+    @package
+    YYClassInfo* _classInfo;
+    NSDictionary* _mapper;
+    NSArray* _allPropertyMetas;
+    
+}
 
 @end
 
 
+@implementation _YYModelMeta
+
+
+
+@end
 
 
 @implementation NSObject (YYModel)

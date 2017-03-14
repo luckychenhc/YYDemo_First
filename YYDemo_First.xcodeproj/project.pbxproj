@@ -253,10 +253,7 @@
 			children = (
 				487BBE131E76990100D3A3AC /* Utility */,
 				487BBD841E76509B00D3A3AC /* Base */,
-				487BBDC51E76509B00D3A3AC /* Cache */,
-				487BBDC61E76509B00D3A3AC /* Image */,
 				487BBDC71E76509B00D3A3AC /* Model */,
-				487BBDCC1E76509B00D3A3AC /* Text */,
 				487BBDCE1E76509B00D3A3AC /* YYKit.h */,
 			);
 			path = YYKit;
@@ -354,20 +351,6 @@
 			path = UIKit;
 			sourceTree = "<group>";
 		};
-		487BBDC51E76509B00D3A3AC /* Cache */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cache;
-			sourceTree = "<group>";
-		};
-		487BBDC61E76509B00D3A3AC /* Image */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Image;
-			sourceTree = "<group>";
-		};
 		487BBDC71E76509B00D3A3AC /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -377,13 +360,6 @@
 				487BBDCB1E76509B00D3A3AC /* YYClassInfo.m */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		487BBDCC1E76509B00D3A3AC /* Text */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Text;
 			sourceTree = "<group>";
 		};
 		487BBDCF1E76509B00D3A3AC /* YYKitDemo */ = {
