@@ -507,7 +507,81 @@ static force_inline id YYValueForMultiKeys(__unsafe_unretained NSDictionary *dic
     }
     
     // Get container property's generic class
+    NSDictionary* genericMapper = nil;
+    if ([cls respondsToSelector:@selector(modelContainerPropertyGenericClass)]) {
+        genericMapper = [(id<YYModel>)cls modelContainerPropertyGenericClass];
+        if (genericMapper) {
+            NSMutableDictionary* tmp = [[NSMutableDictionary alloc] init];
+            // !!!:这里是阻塞线程了?
+            [genericMapper enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+                if (![key isKindOfClass:[NSString class]]) {
+                    return ;
+                }
+                Class meta = object_getClass(obj);
+                if (!meta) {
+                    return;
+                }
+                if (class_isMetaClass(meta)) {
+                    tmp[key] = obj;
+                } else if ([obj isKindOfClass:[NSString class]]) {
+                    Class cls = NSClassFromString(obj);
+                    if (classInfo) {
+                        tmp[key] = cls;
+                    }
+                }
+            }];
+            genericMapper = tmp;
+        }
+    }
     
+    // Create all property metas.
+    NSMutableDictionary* allPropertyMetas = [[NSMutableDictionary alloc] init];
+    YYClassInfo* curClassInfo = classInfo;
+    while (curClassInfo && curClassInfo.superCls != nil) { // recursive parse super class, but ignore root class (NSObject/NSProxy)
+        for (YYClassPropertyInfo* propertyInfo in curClassInfo.propertyInfos.allValues) {
+            if (!propertyInfo.name) {
+                continue;
+            }
+            if (blacklist && [blacklist containsObject:propertyInfo.name]) {
+                continue;
+            }
+            if (whitelist && ![whitelist containsObject:propertyInfo.name]) {
+                continue;
+            }
+            _YYModelPropertyMeta* meta = [_YYModelPropertyMeta metaWithClassInfo:classInfo propertyInfo:propertyInfo generic:genericMapper[propertyInfo.name]];
+            if (!meta || !meta->_name) {
+                continue;
+            }
+            if (!meta->_getter || !meta->_setter) {
+                continue;
+            }
+            if (allPropertyMetas[meta->_name]) {
+                continue;
+            }
+            allPropertyMetas[meta->_name] = meta;
+            
+        }
+        if (allPropertyMetas.count) {
+            _allPropertyMetas = allPropertyMetas.allValues.copy;
+        }
+        
+        // create mapper
+        NSMutableDictionary* mapper = [[NSMutableDictionary alloc] init];
+        NSMutableArray* keyPathPropertyMetas = [NSMutableArray arrayWithCapacity:0];
+        NSMutableArray* multiKeysPropertyMetas = [NSMutableArray arrayWithCapacity:0];
+        if ([cls respondsToSelector:@selector(modelCustomPropertyMapper)]) {
+            NSDictionary* customMapper = [(id<YYModel>)cls modelCustomPropertyMapper];
+            [customMapper enumerateKeysAndObjectsUsingBlock:^(NSString *propertyName, NSString *mappedToKey, BOOL *stop) {
+                _YYModelPropertyMeta* propertyMeta = allPropertyMetas[propertyName];
+                if (!propertyMeta) {
+                    return;
+                }
+#error 重新开始写
+                
+            }];
+        }
+        
+    }
     
     return self;
 }
