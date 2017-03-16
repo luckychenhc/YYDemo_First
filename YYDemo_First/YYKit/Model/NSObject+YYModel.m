@@ -481,7 +481,36 @@ static force_inline id YYValueForMultiKeys(__unsafe_unretained NSDictionary *dic
 
 
 @implementation _YYModelMeta
-
+- (instancetype)initWithClass:(Class)cls {
+    YYClassInfo* classInfo = [YYClassInfo classInfoWithClass:cls];
+    if (!classInfo) {
+        return nil;
+    }
+    self = [super init];
+    
+    // Get black list
+    NSSet* blacklist = nil;
+    if ([cls respondsToSelector:@selector(modelPropertyBlacklist)]) {
+        NSArray* properties = [(id<YYModel>)cls modelPropertyBlacklist];
+        if (properties) {
+            blacklist = [NSSet setWithArray:properties];
+        }
+    }
+    
+    // Get white list
+    NSSet* whitelist = nil;
+    if ([cls respondsToSelector:@selector(modelPropertyWhitelist)]) {
+        NSArray* properties = [(id<YYModel>)cls modelPropertyWhitelist];
+        if (properties) {
+            whitelist = [NSSet setWithArray:properties];
+        }
+    }
+    
+    // Get container property's generic class
+    
+    
+    return self;
+}
 
 
 @end
